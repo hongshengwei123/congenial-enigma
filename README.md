@@ -8,7 +8,7 @@ AI 中文编程增强助手（Cursor 插件 + 可选 VS Code WebView 扩展）�
 
 ## 功能
 
-- **Rules**：中文编程规范（`rules/coding-rules.md`）
+- **Rules**：中文编程规范（`rules/coding-rules.mdc`）
 - **Skills**：代码审查（`skills/code-reviewer/`）
 - **Commands**：插入中文注释（`commands/insert-chinese-comment.md`）
 - **MCP**：示例天气服务 `weather`（`mcp/weather-server.mjs`）
@@ -32,7 +32,7 @@ npm install
 npm run package:zip
 ```
 
-生成 `chinese-ai-helper-1.0.2.zip`。
+生成 `chinese-ai-helper-1.0.3.zip`。
 
 **VS Code / Cursor 扩展 .vsix：**
 
@@ -41,7 +41,7 @@ npm install
 npm run package:vsix
 ```
 
-或 `npm run package`（默认打 .vsix）。输出：`chinese-ai-helper-1.0.2.vsix`，可在 Cursor 中「从 VSIX 安装扩展」。
+或 `npm run package`（默认打 .vsix）。输出：`chinese-ai-helper-1.0.3.vsix`，可在 Cursor 中「从 VSIX 安装扩展」。
 
 ## 发布到 Cursor Marketplace
 

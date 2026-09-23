@@ -2,7 +2,7 @@
   "name": "chinese-ai-helper",
   "displayName": "AI 中文编程增强助手",
   "description": "AI 中文编程增强助手：WebView 侧边栏、授权验证、中文注释插入，含 Cursor 插件 rules/skills/MCP",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publisher": "chinese-ai-helper",
   "license": "MIT",
   "engines": {

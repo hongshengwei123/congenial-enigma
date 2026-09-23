@@ -2,6 +2,13 @@
 
 本项目的版本说明遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+## [1.0.3] - 2026-09-23
+
+### 修复（上架自检）
+
+- Rules 改为 `rules/coding-rules.mdc`（与 Cursor 官方插件规范一致）
+- 删除 `commands/*.command`，仅保留 `.md` 命令文件
+
 ## [1.0.2] - 2026-09-23
 
 ### 新增
@@ -28,6 +35,7 @@
 
 - 初始 Cursor 插件：Rules、Skills、Commands、示例 MCP
 
+[1.0.3]: https://github.com/hongshengwei123/congenial-enigma/releases/tag/v1.0.3
 [1.0.2]: https://github.com/hongshengwei123/congenial-enigma/releases/tag/v1.0.2
 [1.0.1]: https://github.com/hongshengwei123/congenial-enigma/releases/tag/v1.0.1
 [1.0.0]: https://github.com/hongshengwei123/congenial-enigma/releases/tag/v1.0.0
