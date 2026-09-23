@@ -1,0 +1,6 @@
+.git/**
+dist/**
+**/*.zip
+.vscode/**
+**/*.map
+scripts/package-plugin.ps1

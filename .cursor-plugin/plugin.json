@@ -1,0 +1,17 @@
+{
+  "name": "chinese-ai-helper",
+  "version": "1.0.2",
+  "description": "AI 中文编程增强助手",
+  "author": {
+    "name": "hongshengwei123",
+    "email": "hongshengwei123@users.noreply.github.com"
+  },
+  "homepage": "https://github.com/hongshengwei123/congenial-enigma#readme",
+  "repository": "https://github.com/hongshengwei123/congenial-enigma",
+  "license": "MIT",
+  "logo": "assets/logo.svg",
+  "keywords": ["chinese", "ai", "coding"],
+  "rules": "rules/",
+  "skills": "skills/",
+  "commands": "commands/"
+}

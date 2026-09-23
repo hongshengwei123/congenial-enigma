@@ -1,0 +1,56 @@
+{
+  "name": "chinese-ai-helper",
+  "displayName": "AI 中文编程增强助手",
+  "description": "AI 中文编程增强助手：WebView 侧边栏、授权验证、中文注释插入，含 Cursor 插件 rules/skills/MCP",
+  "version": "1.0.2",
+  "publisher": "chinese-ai-helper",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Other"],
+  "keywords": ["chinese", "ai", "coding", "cursor", "webview"],
+  "icon": "assets/logo.png",
+  "activationEvents": ["onStartupFinished"],
+  "main": "./extension/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "chineseAI-container",
+          "title": "AI编程助手",
+          "icon": "$(robot)"
+        }
+      ]
+    },
+    "views": {
+      "chineseAI-container": [
+        {
+          "type": "webview",
+          "id": "chineseAI.sidebar",
+          "name": "AI编程助手"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "chineseAI.openSidebar",
+        "title": "打开 AI 编程助手"
+      }
+    ]
+  },
+  "scripts": {
+    "install:local": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/install-local.ps1",
+    "validate:marketplace": "node scripts/validate-marketplace.mjs",
+    "package:zip": "powershell -NoProfile -ExecutionPolicy Bypass -File ./scripts/package-plugin.ps1",
+    "package:vsix": "vsce package --allow-missing-repository --allow-star-activation",
+    "package": "npm run package:vsix"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "^3.7.1"
+  }
+}
