@@ -31,7 +31,7 @@ Write-Host "Copied plugin sources to: $target"
 Write-Host "Installing runtime dependencies (MCP)..."
 Push-Location $target
 try {
-  npm install --omit=dev --no-fund --no-audit
+  npm install --omit=dev --ignore-scripts --no-fund --no-audit
 } finally {
   Pop-Location
 }
