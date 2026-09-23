@@ -10,9 +10,31 @@ if (-not (Test-Path (Split-Path $target -Parent))) {
 if (Test-Path $target) {
   Remove-Item $target -Recurse -Force
 }
+New-Item -ItemType Directory -Path $target -Force | Out-Null
 
-Copy-Item $Root $target -Recurse -Force
-@("dist", "*.zip") | ForEach-Object { Get-ChildItem $target -Recurse -Include $_ -ErrorAction SilentlyContinue | Remove-Item -Recurse -Force -ErrorAction SilentlyContinue }
+$excludeDirs = @("node_modules", ".git", "dist")
+$excludeFiles = @("*.zip", "*.vsix")
+
+Get-ChildItem -LiteralPath $Root -Force | ForEach-Object {
+  if ($_.PSIsContainer -and $excludeDirs -contains $_.Name) {
+    return
+  }
+  if (-not $_.PSIsContainer) {
+    foreach ($pat in $excludeFiles) {
+      if ($_.Name -like $pat) { return }
+    }
+  }
+  Copy-Item -LiteralPath $_.FullName -Destination (Join-Path $target $_.Name) -Recurse -Force
+}
+
+Write-Host "Copied plugin sources to: $target"
+Write-Host "Installing runtime dependencies (MCP)..."
+Push-Location $target
+try {
+  npm install --omit=dev --no-fund --no-audit
+} finally {
+  Pop-Location
+}
 
 Write-Host "Installed to: $target"
 Write-Host "Restart Cursor or reload Plugins, then check Customize."
